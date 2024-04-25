@@ -1,0 +1,106 @@
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/Test.lua"))();
+
+local Window = Library.CreateLib("PHNK UI", "DarkTheme")
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "PHNK UI"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    Library:ToggleUI() 
+end)
+
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+
+local Tab = Window:NewTab("VOTE")
+local Section = Tab:NewSection("Vote Can Vote Yourself!")
+
+Section:NewButton("Vote 0 (BUG❌)", "ButtonInfo", function()
+    local args = {
+    [1] = 0.1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("Vote 1 (WORK✅)", "ButtonInfo", function()
+    local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Vote 2 (WORK✅)", "ButtonInfo", function()
+    local args = {
+    [1] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Vote 3 (WORK✅)", "ButtonInfo", function()
+    local args = {
+    [1] = 3
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Vote 4 (WORK✅)", "ButtonInfo", function()
+    local args = {
+    [1] = 5
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Vote 5 (WORK✅)", "ButtonInfo", function()
+   local args = {
+    [1] = 5
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+wait(0)
+   local args = {
+    [1] = 5
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+
+end)
+
+local Section = Tab:NewSection("I Don't Know that can work or fake vote💀")
+Section:NewButton("VOTE 20 (BUG❌)", "ButtonInfo", function()
+    local args = {
+    [1] = 20
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("VOTE -20 (BUG❌)", "ButtonInfo", function()
+    local args = {
+    [1] = -20
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SendVote"):InvokeServer(unpack(args))
+
+end) 
